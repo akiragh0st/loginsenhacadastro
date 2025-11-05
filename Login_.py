@@ -7,9 +7,8 @@ def VisuLogin(page: ft.Page):
     
     usuarioemail_login = ft.TextField(label="Usuario ou Email", width= 300)
     Senha_login = ft.TextField(label="Senha", width= 300, password= True, can_reveal_password= True)
-    botão_login = ft.ElevatedButton("Entrar")
-    botão_cadastro = ft.ElevatedButton("deseja realizar o cadastro?", on_click = lambda _:page.go('/Cadastro'))
-    botão_home = ft.ElevatedButton("Voltar para a tela inicial", on_click = lambda _:page.go('/'))
+    botão_login = ft.ElevatedButton("Entrar", on_click=lambda _:page.go('/'))
+    botão_cadastro = ft.ElevatedButton("Cadastro", on_click = lambda _:page.go('/Cadastro'))
     return ft.View(
         route = '/Login',
         controls= [
@@ -17,7 +16,6 @@ def VisuLogin(page: ft.Page):
             Senha_login,
             botão_cadastro,
             botão_login,
-            botão_home,
         ], vertical_alignment="CENTER", 
         horizontal_alignment="CENTER"
     )
