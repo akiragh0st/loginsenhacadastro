@@ -1,10 +1,10 @@
 import flet as ft
 
 def VisuLogin(page: ft.Page):
-    page.window.min_width = 320  # Mínimo de largura para dispositivos móveis
-    page.window.max_width = 500  # Máximo de largura para garantir que seja adaptável
-    page.window.min_height = 500  # Minimo de altura
-    page.window.max_height = 800  # Máximo de altura
+    page.window.min_width = 320  
+    page.window.max_width = 500  
+    page.window.min_height = 500  
+    page.window.max_height = 800  
     page.window.height = 800
     page.window.width = 500
     usuarioemail_login = ft.TextField(label="Usuario ou Email", width= 300)
@@ -31,7 +31,7 @@ def VisuLogin(page: ft.Page):
                 ],
                 alignment="center",
                 horizontal_alignment="center",
-                spacing=15  # Adiciona um espaçamento entre os campos de entrada
+                spacing=15  
             ),
         ],
         vertical_alignment="center", 
