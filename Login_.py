@@ -1,5 +1,5 @@
 import flet as ft
-
+import re
 def VisuLogin(page: ft.Page):
     page.window.min_width = 320  
     page.window.max_width = 500  
@@ -12,7 +12,18 @@ def VisuLogin(page: ft.Page):
     botão_login = ft.ElevatedButton("Entrar", on_click=lambda _:page.go('/home'))
     botão_cadastro = ft.ElevatedButton("Cadastro", on_click = lambda _:page.go('/cadastro'))
 
-    
+
+
+    def entra_na_conta(e):
+        if not usuarioemail_login.value.strip() or not usuarioemail_login.strip() or not Senha_login.value.strip():
+            page.open(ft.SnackBar(ft.Text("⚠️ Todos os campos devem ser preenchidos!"), bgcolor="RED"))
+            return
+         
+        if not re.match(usuarioemail_login,usuarioemail_login.value.strip()):
+                page.open(ft.SnackBar(ft.Text("👎 E-mail inválido!"), bgcolor="RED"))
+                return
+    botão_login = ft.TextButton("entrando na sua conta", on_click=entra_na_conta)
+        
     return ft.View(
         route='/Cadastro',
         controls=[
